@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Live Streaming</title>
+    <!-- <script src="https://vjs.zencdn.net/ie8/1.1.2/videojs-ie8.min.js"></script> -->
+    <link href="https://vjs.zencdn.net/7.10.2/video-js.css" rel="stylesheet" />
+    <script src="https://vjs.zencdn.net/7.10.2/video.min.js"></script>
+    <link href="https://vjs.zencdn.net/7.10.2/video-js.css" rel="stylesheet" />
+</head>
+<body>
+<video id="hls_player" class="video-js vjs-default-skin" height="360" width="640" controls autoplay preload="none">
+    <source src="http://192.168.0.25:8080/hls/boo.m3u8" type="application/x-mpegURL" />
+
+</video>
+</br>
+</br>
+<video id="dash_player" class="video-js vjs-default-skin" height="360" width="640" controls autoplay preload="none">
+    <source src="http://192.168.0.25:8080/dash/boo.mpd"  type="application/dash+xml">  
+ 
+</video>
+<script>
+    var hlsPlayer = videojs('#hls_player',{liveui: true});
+    var dashPlayer = videojs('#dash_player',{liveui: true});
+</script>
+</body>
+</html>
